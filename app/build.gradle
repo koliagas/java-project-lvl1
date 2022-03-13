@@ -41,3 +41,7 @@ tasks.named('test') {
 compileJava {
         options.release = 17
     }
+
+tasks.run {
+    standardInput = System.in
+}
