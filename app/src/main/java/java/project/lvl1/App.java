@@ -4,7 +4,7 @@
 package java.project.lvl1;
 
 public class App {
-    public String getGreeting() {
+    public static String getGreeting() {
         return "Hello World!";
     }
 
