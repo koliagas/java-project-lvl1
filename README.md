@@ -3,3 +3,4 @@
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 ![example workflow](https://github.com/koliagas/java-project-lvl1/actions/workflows/makefile.yml/badge.svg)
 [![asciicast](https://asciinema.org/a/rGfojbS6ed3A9qBeRFCQcrqhC.svg)](https://asciinema.org/a/rGfojbS6ed3A9qBeRFCQcrqhC)
+[![asciicast](https://asciinema.org/a/sPzJuL82CcQ7L1MTMoc8TTRuK.svg)](https://asciinema.org/a/sPzJuL82CcQ7L1MTMoc8TTRuK)
