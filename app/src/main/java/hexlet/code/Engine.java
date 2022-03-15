@@ -2,14 +2,15 @@ package hexlet.code;
 
 public class Engine {
     public static void check(boolean checkGamePass, int i, String userName) {
-        if (checkGamePass) {
-            System.out.println("Correct!");
+        if (!checkGamePass) {
+            System.out.println("Let's try again, " + userName + "!");
+            System.exit(0);
         }
+        System.out.println("Correct!");
         if (i == 2) {
             System.out.println("Congratulations, " + userName + "!");
         }
-        System.out.println("Let's try again, " + userName + "!");
-        System.exit(0);
+
     }
     public static void engine(int choiceGame) {
         final int maxRound = 3;
