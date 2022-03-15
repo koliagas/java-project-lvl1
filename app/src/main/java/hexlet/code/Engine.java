@@ -16,9 +16,10 @@ public class Engine {
         final int maxRound = 3;
         final int parityGame = 2;
         final int calcGame = 3;
+        final int gcdGame = 4; // greatest common divisor
         System.out.println("Welcome to the Brain Games!");
         String userName = Cli.getName();
-        final int randUpperLimit = 100;
+        final int randUpperLimit = 10;
         switch (choiceGame) {
             case parityGame:
                 for (int i = 0; i < maxRound; i++) {
@@ -29,6 +30,12 @@ public class Engine {
             case calcGame:
                 for (int i = 0; i < maxRound; i++) {
                     boolean checkGamePass = Calc.calcGame(i, randUpperLimit);
+                    check(checkGamePass, i, userName);
+                }
+                break;
+            case gcdGame:
+                for (int i = 0; i < maxRound; i++) {
+                    boolean checkGamePass = Gcd.gcdGame(randUpperLimit);
                     check(checkGamePass, i, userName);
                 }
                 break;
