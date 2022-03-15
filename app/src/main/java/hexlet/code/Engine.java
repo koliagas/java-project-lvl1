@@ -19,7 +19,7 @@ public class Engine {
         final int gcdGame = 4; // greatest common divisor
         System.out.println("Welcome to the Brain Games!");
         String userName = Cli.getName();
-        final int randUpperLimit = 10;
+        final int randUpperLimit = 100;
         switch (choiceGame) {
             case parityGame:
                 for (int i = 0; i < maxRound; i++) {
