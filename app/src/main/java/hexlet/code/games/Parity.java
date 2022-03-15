@@ -3,7 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Parity {
-    public static boolean parityGame(int randomNumber) {
+    public static boolean parityGame(int randUpperLimit) {
+        int randomNumber = (int) (Math.random() * randUpperLimit);
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         System.out.println("Question: " + randomNumber);
         System.out.print("Your answer: ");

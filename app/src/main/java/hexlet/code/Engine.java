@@ -1,46 +1,34 @@
 package hexlet.code;
 
 public class Engine {
+    public static void check(boolean checkGamePass, int i, String userName) {
+        if (checkGamePass) {
+            System.out.println("Correct!");
+        }
+        if (i == 2) {
+            System.out.println("Congratulations, " + userName + "!");
+        }
+        System.out.println("Let's try again, " + userName + "!");
+        System.exit(0);
+    }
     public static void engine(int choiceGame) {
-        String userName;
         final int maxRound = 3;
+        final int parityGame = 2;
+        final int calcGame = 3;
+        System.out.println("Welcome to the Brain Games!");
+        String userName = Cli.getName();
+        final int randUpperLimit = 100;
         switch (choiceGame) {
-            case 1:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
-                break;
-            case 2:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
+            case parityGame:
                 for (int i = 0; i < maxRound; i++) {
-                    final int randUpperLimit = 10;
-                    int randomNumber = (int) (Math.random() * randUpperLimit);
-                    boolean gameReturn = Parity.parityGame(randomNumber);
-                    if (gameReturn) {
-                        System.out.println("Let's try again, " + userName + "!");
-                        break;
-                    }
-                    System.out.println("Correct!");
-                    if (i == 2) {
-                        System.out.println("Congratulations, " + userName + "!");
-                    }
+                    boolean checkGamePass = Parity.parityGame(randUpperLimit);
+                    check(checkGamePass, i, userName);
                 }
                 break;
-            case 3:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
+            case calcGame:
                 for (int i = 0; i < maxRound; i++) {
-                    final int randUpperLimit = 10;
-                    int randomNumber = (int) (Math.random() * randUpperLimit);
-                    boolean gameReturn = Calc.calcGame(i, randomNumber);
-                    if (gameReturn) {
-                        System.out.println("Let's try again, " + userName + "!");
-                        break;
-                    }
-                    System.out.println("Correct!");
-                    if (i == 2) {
-                        System.out.println("Congratulations, " + userName + "!");
-                    }
+                    boolean checkGamePass = Calc.calcGame(i, randUpperLimit);
+                    check(checkGamePass, i, userName);
                 }
                 break;
             default:

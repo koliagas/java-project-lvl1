@@ -3,10 +3,11 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Calc {
-    public static boolean calcGame(int i, int randomNumber) {
+    public static boolean calcGame(int i, int randUpperLimit) {
+        int randomNumber = (int) (Math.random() * randUpperLimit);
+        int randomNumber2 = (int) (Math.random() * randUpperLimit);
         System.out.println("What is the result of the expression?");
         char[] arithmetic = {'*', '+', '-'};
-        int randomNumber2 = randomNumber;
         int rightAnswer = 0;
 
         System.out.println("Question: " + randomNumber + " " + arithmetic[i] + " " + randomNumber2);
