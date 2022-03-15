@@ -4,3 +4,4 @@
 ![example workflow](https://github.com/koliagas/java-project-lvl1/actions/workflows/makefile.yml/badge.svg)
 [![asciicast](https://asciinema.org/a/rGfojbS6ed3A9qBeRFCQcrqhC.svg)](https://asciinema.org/a/rGfojbS6ed3A9qBeRFCQcrqhC)
 [![asciicast](https://asciinema.org/a/sPzJuL82CcQ7L1MTMoc8TTRuK.svg)](https://asciinema.org/a/sPzJuL82CcQ7L1MTMoc8TTRuK)
+[![asciicast](https://asciinema.org/a/Jn5t4F3g1Y2YbXDOPRZguYSfW.svg)](https://asciinema.org/a/Jn5t4F3g1Y2YbXDOPRZguYSfW)
