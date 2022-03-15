@@ -7,24 +7,13 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
 
         Scanner sc = new Scanner(System.in);
         int choiceGame = sc.nextInt();
 
-        System.out.println("Your choice: " + choiceGame + "/n");
-        System.out.println("Welcome to the Brain Games!");
-        switch (choiceGame) {
-            case 1:
-                Cli.getName();
-                break;
-            case 2:
-                Parity.parityGame();
-                break;
-            default:
-                break;
-        }
-
-
+        System.out.println("Your choice: " + choiceGame);
+        Engine.engine(choiceGame);
     }
 }
