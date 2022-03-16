@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Scanner;
 
@@ -13,6 +13,7 @@ public class ProgressionGame {
         int progression = lowerProgression + (int) (Math.random() * randUpperLimit);
         int rightAnswer = 0;
         System.out.println("What number is missing in the progression?");
+        System.out.print("Question: ");
         for (int i = 0; i < progressSize; i++) {
             if (i == missedNumber) {
                 System.out.print(" .. ");
@@ -24,7 +25,7 @@ public class ProgressionGame {
                 randomNumber += progression;
             }
         }
-        System.out.print("Your answer: ");
+        System.out.print("\nYour answer: ");
         Scanner sc = new Scanner(System.in);
         int answer = sc.nextInt();
         if (answer == rightAnswer) {
