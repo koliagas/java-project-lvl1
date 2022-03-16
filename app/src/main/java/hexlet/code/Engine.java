@@ -59,6 +59,7 @@ public class Engine {
                     boolean checkGamePass = ProgressionGame.progressGame(randUpperLimit);
                     check(checkGamePass, i, userName);
                 }
+                break;
             case primeGame:
                 System.out.println("Welcome to the Brain Games!");
                 userName = Cli.getName();
