@@ -1,7 +1,7 @@
 install: # Вычищение и создание новой сборки
 	./gradlew clean install
 run-dist: # Запуск исполняемого файла
-	./app/build/install/app/bin/app
+	./build/install/app/bin/app
 check-updates: # Проверка обновления зависимостей и плагинов
 	./gradlew dependencyUpdates
 lint: #Проверка кода на сооответствие стандартам
