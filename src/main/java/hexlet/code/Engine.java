@@ -1,5 +1,11 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.Parity;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.Gcd;
+
 public class Engine {
     public static void check(boolean checkGamePass, int i, String userName) {
         if (!checkGamePass) {
