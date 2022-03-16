@@ -27,6 +27,7 @@ public class Engine {
             case greet:
                 System.out.println("Welcome to the Brain Games!");
                 userName = Cli.getName();
+                break;
             case parityGame:
                 System.out.println("Welcome to the Brain Games!");
                 userName = Cli.getName();
