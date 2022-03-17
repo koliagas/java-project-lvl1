@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ProgressionGame {
     public static boolean progressGame(int randUpperLimit) {
         final int upperProgressSize = 5;
-        final int lowerProgressSize = 5;
+        final int lowerProgressSize = 6;
         final int lowerProgression = 2;
         int randomNumber = (int) (Math.random() * randUpperLimit);
         int progressSize = lowerProgressSize + (int) (Math.random() * upperProgressSize);
@@ -16,7 +16,7 @@ public class ProgressionGame {
         System.out.print("Question: ");
         for (int i = 0; i < progressSize; i++) {
             if (i == missedNumber) {
-                System.out.print(" .. ");
+                System.out.print(".. ");
                 rightAnswer = randomNumber;
                 randomNumber += progression;
                 i++;
