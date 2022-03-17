@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class PrimeGame {
     public static boolean primeGame(int randUpperLimit) {
-        int randomNumber = (int) (Math.random() * randUpperLimit);
+        int primeNumberStart = 2;
+        int randomNumber = primeNumberStart + (int) (Math.random() * randUpperLimit);
         int delimeters = 0;
         String rightAnswer = "";
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
