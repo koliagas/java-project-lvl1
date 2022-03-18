@@ -15,7 +15,7 @@ public class Progression {
         final int progressSizeEnd = 6;
         final int progressionDifferenceStart = 2;
         final int progressionDifferenceEnd = 10;
-        final int positionMissedNumberStart = 0;
+        final int positionMissedNumberStart = 2;
         final int gameIter = 3;
         String[][] conditions = new String[2][gameIter];
         int iter = 0;
