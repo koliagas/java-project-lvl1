@@ -9,7 +9,7 @@ public class Engine {
         final int maxRound = 3;
         String answer;
         String userName;
-        System.out.println("Welcome to the Brain Games!");
+
         userName = Cli.getName();
 
         System.out.println(description);
