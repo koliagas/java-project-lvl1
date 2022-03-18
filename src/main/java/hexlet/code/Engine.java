@@ -1,82 +1,38 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.ProgressionGame;
-import hexlet.code.games.Parity;
-import hexlet.code.games.PrimeGame;
-import hexlet.code.games.Gcd;
+import java.util.Scanner;
 
 public class Engine {
-    public static void check(boolean checkGamePass, int i, String userName) {
-        if (!checkGamePass) {
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
-        System.out.println("Correct!");
-        if (i == 2) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
-
-    }
-    public static void engine(int choiceGame) {
+    private static final int CONDITION = 0;
+    private static final int RIGHT_ANSWER = 1;
+    public static void runGame(String[][] conditions, String description) {
         final int maxRound = 3;
-        final int greet = 1;
-        final int parityGame = 2;
-        final int calcGame = 3;
-        final int gcdGame = 4; // greatest common divisor
-        final int progressionGame = 5;
-        final int primeGame = 6;
-        final int randUpperLimit = 100;
+        String answer;
         String userName;
+        System.out.println("Welcome to the Brain Games!");
+        userName = Cli.getName();
 
-        switch (choiceGame) {
-            case greet:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
-                break;
-            case parityGame:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
-                for (int i = 0; i < maxRound; i++) {
-                    boolean checkGamePass = Parity.parityGame(randUpperLimit);
-                    check(checkGamePass, i, userName);
+        System.out.println(description);
+        for (int i = 0; i < maxRound; i++) {
+            System.out.println("Question: " + conditions[CONDITION][i]);
+            System.out.print("Your answer: ");
+
+            Scanner userChoice = new Scanner(System.in);
+            answer = userChoice.nextLine();
+
+            if (answer.equals(conditions[RIGHT_ANSWER][i])) {
+                System.out.println("Correct!");
+                if (i == 2) {
+                    System.out.println("Congratulations, " + userName + "!");
                 }
+            } else if (!answer.equals(conditions[RIGHT_ANSWER][i])) {
+                System.out.println("'" + answer + "' is wrong answer ;(. "
+                        + "Correct answer was '" + conditions[RIGHT_ANSWER][i] + "'.");
+                System.out.println("Let's try again, " + userName + "!");
                 break;
-            case calcGame:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
-                for (int i = 0; i < maxRound; i++) {
-                    boolean checkGamePass = Calc.calcGame(i, randUpperLimit);
-                    check(checkGamePass, i, userName);
-                }
-                break;
-            case gcdGame:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
-                for (int i = 0; i < maxRound; i++) {
-                    boolean checkGamePass = Gcd.gcdGame(randUpperLimit);
-                    check(checkGamePass, i, userName);
-                }
-                break;
-            case progressionGame:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
-                for (int i = 0; i < maxRound; i++) {
-                    boolean checkGamePass = ProgressionGame.progressGame(randUpperLimit);
-                    check(checkGamePass, i, userName);
-                }
-                break;
-            case primeGame:
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getName();
-                for (int i = 0; i < maxRound; i++) {
-                    boolean checkGamePass = PrimeGame.primeGame(randUpperLimit);
-                    check(checkGamePass, i, userName);
-                }
-                break;
-            default:
-                break;
+            }
         }
+
     }
 }
 
