@@ -15,7 +15,7 @@ public class Progression {
         final int progressSizeEnd = 6;
         final int progressionDifferenceStart = 2;
         final int progressionDifferenceEnd = 10;
-        final int positionMissedNumberStart = 0;
+        final int positionMissedNumberStart = 2;
         final int gameIter = 3;
         String[][] conditions = new String[2][gameIter];
         int iter = 0;
@@ -26,7 +26,7 @@ public class Progression {
             int missedNumber = Utils.getRandom(positionMissedNumberStart, progressionSize);
             int progression = Utils.getRandom(progressionDifferenceStart, progressionDifferenceEnd);
             conditions[CONDITION][iter] = "";
-            for (int i = 0; i < progressionSize; i++) {
+            for (int i = 0; i <= progressionSize; i++) {
                 if (i == missedNumber) {
                     conditions[CONDITION][iter] +=  ".. ";
                     conditions[RIGHT_ANSWER][iter] = "" + randomNumber;
