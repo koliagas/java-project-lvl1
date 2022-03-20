@@ -5,9 +5,9 @@ import hexlet.code.Utils;
 
 public class Progression {
     private static final String DESCRIPTION_GAME = "What number is missing in the progression?";
+    private static final int MAX_RANDOM_NUMBER = 100;
 
     public static void runGame() {
-        final int randNumberEnd = 100;
         final int progressSizeStart = 5;
         final int progressSizeEnd = 6;
         final int progressionDifferenceStart = 2;
@@ -16,7 +16,7 @@ public class Progression {
         int iter = 0;
 
         while (iter < Engine.GAME_ITER) {
-            int randomNumber = Utils.getRandom(0, randNumberEnd);
+            int randomNumber = Utils.getRandom(0, MAX_RANDOM_NUMBER);
             int progressionSize = Utils.getRandom(progressSizeStart, progressSizeEnd);
             int missedNumber = Utils.getRandom(0, progressionSize);
             int progression = Utils.getRandom(progressionDifferenceStart, progressionDifferenceEnd);

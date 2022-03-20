@@ -7,12 +7,9 @@ public class Engine {
     public static final int RIGHT_ANSWER = 1;
     public static final int GAME_ITER = 3;
     public static void runEngine(String[][] conditions, String description) {
-        String answer;
-        String userName;
-
         System.out.print("Welcome to the Brain Games! \n"
                 + "May I have your name? ");
-        userName = Cli.getName();
+        String userName = Cli.getName();
         System.out.println("Hello, " + userName + "!");
 
         System.out.println(description);
@@ -21,7 +18,7 @@ public class Engine {
                     + "Your answer: ");
 
             Scanner userChoice = new Scanner(System.in);
-            answer = userChoice.nextLine();
+            String answer = userChoice.nextLine();
 
             if (!answer.equals(conditions[i][RIGHT_ANSWER])) {
                 System.out.println("'" + answer + "' is wrong answer ;(. "
