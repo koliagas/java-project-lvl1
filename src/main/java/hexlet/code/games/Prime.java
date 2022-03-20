@@ -13,12 +13,12 @@ public class Prime {
 
         while (iter < Engine.GAME_ITER) {
             String rightAnswer = "yes";
-            int randomNumber = Utils.getRandom( 0 , MAX_RANDOM_NUMBER);
+            int randomNumber = Utils.getRandom(0, MAX_RANDOM_NUMBER);
             conditions[iter][Engine.CONDITION] = "" + randomNumber;
             int squareRootOfNumber = (int) Math.sqrt(randomNumber);
 
             for (int i = 2; i <= squareRootOfNumber; i++) {
-                if (randomNumber % i == 0 ) {
+                if (randomNumber % i == 0) {
                     rightAnswer = "no";
                     break;
                 }
