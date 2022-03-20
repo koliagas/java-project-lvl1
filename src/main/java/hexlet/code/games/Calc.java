@@ -5,40 +5,41 @@ import hexlet.code.Utils;
 
 public class Calc {
     private static final String DESCRIPTION_GAME = "What is the result of the expression?";
-    private static final int CONDITION = 0;
-    private static final int RIGHT_ANSWER = 1;
 
-    public static void calcGame() {
-        final int gcdNumberStart = 1;
+    public static int operations(char aritmeticOperation, int randomNumber1, int randomNumber2) {
+        int rightAnswer = 0;
+        switch (aritmeticOperation) {
+            case '*':
+                rightAnswer = randomNumber1 * randomNumber2;
+                break;
+            case '+':
+                rightAnswer = randomNumber1 + randomNumber2;
+                break;
+            case '-':
+                rightAnswer = randomNumber1 - randomNumber2;
+                break;
+            default:
+                break;
+        }
+        return rightAnswer;
+    }
+    public static void runGame() {
         final int gcdNumberEnd = 100;
-        final char[] arithmetic = {'*', '+', '-'};
-        final int gameIter = 3;
-        String[][] conditions = new String[2][gameIter];
+        final char[] arithmeticOperations = {'*', '+', '-'};
+        String[][] conditions = new String[Engine.GAME_ITER][2];
         int iter = 0;
 
-        do {
-            int randomNumber = Utils.getRandom(gcdNumberStart, gcdNumberEnd);
-            int randomNumber2 = Utils.getRandom(gcdNumberStart, gcdNumberEnd);
-            int rightAnswer = 0;
-            conditions[CONDITION][iter] = randomNumber + " " + arithmetic[iter] + " " + randomNumber2;
+        while (iter < Engine.GAME_ITER) {
+            int randomNumber1 = Utils.getRandom(1, gcdNumberEnd);
+            int randomNumber2 = Utils.getRandom(1, gcdNumberEnd);
+            int randomOperations = Utils.getRandom(0, arithmeticOperations.length);
 
-            switch (iter) {
-                case 0:
-                    rightAnswer = randomNumber * randomNumber2;
-                    break;
-                case 1:
-                    rightAnswer = randomNumber + randomNumber2;
-                    break;
-                case 2:
-                    rightAnswer = randomNumber - randomNumber2;
-                    break;
-                default:
-                    break;
-            }
-            conditions[RIGHT_ANSWER][iter] = "" + rightAnswer;
+            conditions[iter][Engine.CONDITION] = randomNumber1 + " " + arithmeticOperations[iter] + " " + randomNumber2;
+            conditions[iter][Engine.RIGHT_ANSWER] = "" + operations(arithmeticOperations[randomOperations],
+                    randomNumber1, randomNumber2);
             iter++;
-        } while (iter < gameIter);
+        }
 
-        Engine.runGame(conditions, DESCRIPTION_GAME);
+        Engine.runEngine(conditions, DESCRIPTION_GAME);
     }
 }

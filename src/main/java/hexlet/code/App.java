@@ -32,22 +32,25 @@ public class App {
 
         switch (choiceGame) {
             case greet:
-                Cli.getName();
+                System.out.print("Welcome to the Brain Games! \n"
+                       + "May I have your name? ");
+                String userName = Cli.getName();
+                System.out.println("Hello, " + userName + "!");
                 break;
             case parityGame:
-                Parity.parityGame();
+                Parity.runGame();
                 break;
             case calcGame:
-                Calc.calcGame();
+                Calc.runGame();
                 break;
             case gcdGame:
-                Gcd.gcdGame();
+                Gcd.runGame();
                 break;
             case progressionGame:
-                Progression.progressGame();
+                Progression.runGame();
                 break;
             case primeGame:
-                Prime.primeGame();
+                Prime.runGame();
                 break;
             default:
                 System.out.println("Wrong number");
